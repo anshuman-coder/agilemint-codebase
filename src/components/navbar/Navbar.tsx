@@ -2,7 +2,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel, Transition } from '@head
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useMemo } from 'react'
+import React, { Fragment, useMemo } from 'react'
 import ThemeSwitch from '~/components/navbar/ThemeSwitch'
 import { navigation } from '~/constants'
 
@@ -15,12 +15,12 @@ const Navbar = () => {
   )
 
   return (
-    <div className='w-full fixed top-0 left-0'>
-      <nav className='container relative flex flex-wrap items-center justify-between py-2 px-4 lg:py-4 lg:px-8 mx-auto lg:justify-between xl:px-0 bg-white dark:bg-trueGray-900'>
+    <div className='w-full z-50 fixed top-0 left-0 bg-white dark:bg-trueGray-900'>
+      <nav className='container relative flex flex-wrap items-center justify-between py-2 px-4 lg:py-4 lg:px-8 mx-auto lg:justify-between xl:px-0'>
         <Disclosure>
           {({ open }) => (
             <>
-              <div className='flex flex-wrap items-center justify-between gap-x-4 w-full lg:w-auto'>
+              <div className='flex flex-wrap items-center justify-between gap-x-4 w-full lg:w-auto !bg-white dark:!bg-trueGray-900'>
                 <Link href='/'>
                   <div className='flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100'>
                     <Image
@@ -66,10 +66,11 @@ const Navbar = () => {
                   leave='transition duration-300 ease-in'
                   leaveFrom='transform translate-y-0 opacity-100'
                   leaveTo='transform -translate-y-full opacity-0'
+                  as={Fragment}
                 >
                   <DisclosurePanel
                     as='div'
-                    className='flex flex-col lg:flex-row flex-wrap w-full my-5 lg:hidden transform transition-all ease-in-out'
+                    className='flex flex-col z-10 lg:flex-row flex-wrap w-full my-5 lg:hidden transform transition-all ease-in-out'
                   >
                     <>
                       {navigation.map((item, index) => (
