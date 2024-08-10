@@ -7,7 +7,7 @@ interface ContainerProps extends PropsWithChildren {
 
 const Container: FC<ContainerProps> = ({
   children,
-  className = ''
+  className = '',
 }) => {
   return (
     <div className={clsx('container p-8 mx-auto xl:px-0', className)}>

@@ -11,12 +11,12 @@ const Navbar = () => {
 
   const logoUrl = useMemo(
     () => theme === 'dark' ? '/assets/dark-logo.png' : '/assets/light-logo.png',
-    [theme]
+    [theme],
   )
 
   return (
-    <div className='w-full'>
-      <nav className='container relative flex flex-wrap items-center justify-between p-4 lg:p-8 mx-auto lg:justify-between xl:px-0'>
+    <div className='w-full fixed top-0 left-0'>
+      <nav className='container relative flex flex-wrap items-center justify-between py-2 px-4 lg:py-4 lg:px-8 mx-auto lg:justify-between xl:px-0 bg-white dark:bg-trueGray-900'>
         <Disclosure>
           {({ open }) => (
             <>

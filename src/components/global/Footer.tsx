@@ -10,9 +10,9 @@ const Footer = () => {
 
   const logoUrl = useMemo(
     () => theme === 'dark' ? '/assets/dark-logo.png' : '/assets/light-logo.png',
-    [theme]
+    [theme],
   )
-  
+
   return (
     <div className='relative'>
       <Container>

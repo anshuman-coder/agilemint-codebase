@@ -3,12 +3,14 @@ import Navbar from '~/components/navbar/Navbar'
 import { Footer } from '~/components/global'
 
 const PageBox: FC<PropsWithChildren> = ({
-  children
+  children,
 }) => {
   return (
     <>
       <Navbar />
-      {children}
+      <div className='w-full pt-28'>
+        {children}
+      </div>
       <Footer />
     </>
   )

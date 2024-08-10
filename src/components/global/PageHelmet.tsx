@@ -6,7 +6,7 @@ interface PageHelmetProps {
 }
 
 const PageHelmet: FC<PageHelmetProps> = ({
-  title = ''
+  title = '',
 }) => {
   return (
     <Head>

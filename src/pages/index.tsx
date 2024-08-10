@@ -1,14 +1,13 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import React from 'react'
 import { PageBox, PageHelmet } from '~/components/global'
-
-const inter = Inter({ subsets: ['latin'] })
+import Hero from '~/components/home/Hero'
 
 export default function Home() {
   return (
     <>
       <PageHelmet />
       <PageBox>
+        <Hero />
       </PageBox>
     </>
   )
