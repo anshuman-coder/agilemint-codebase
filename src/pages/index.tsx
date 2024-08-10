@@ -13,9 +13,11 @@ export default function Home() {
           title='Why should you use this landing page'
           align='center'
         >
-          Nextly is a free landing page & marketing website template for startups
-          and indie projects. Its built with Next.js & TailwindCSS. And its
-          completely open-source.
+          <p className='max-w-2xl py-4 text-lg leading-normal text-gray-500 lg:text-xl xl:text-xl dark:text-gray-300'>
+            Nextly is a free landing page & marketing website template for startups
+            and indie projects. Its built with Next.js & TailwindCSS. And its
+            completely open-source.
+          </p>
         </SectionWrapper>
       </PageBox>
     </>

@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <div className='w-full z-50 fixed top-0 left-0 bg-white dark:bg-trueGray-900'>
-      <nav className='container relative flex flex-wrap items-center justify-between py-2 px-4 lg:py-4 lg:px-8 mx-auto lg:justify-between xl:px-0'>
+      <nav className='container relative flex flex-wrap items-center justify-between py-2 px-4 lg:py-4 lg:px-8 mx-auto lg:justify-between xl:px-6 laptop:px-0'>
         <Disclosure>
           {({ open }) => (
             <>
@@ -31,7 +31,7 @@ const Navbar = () => {
                     />
                   </div>
                 </Link>
-                <div className='flex lg:hidden justify-center items-center gap-4'>
+                <div className='flex lg:hidden justify-center items-center gap-6'>
                   <div className='flex justify-center items-center'>
                     <ThemeSwitch />
                   </div>
@@ -107,7 +107,7 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className='hidden mr-3 space-x-4 lg:flex nav__item'>
+        <div className='hidden mr-3 gap-x-6 lg:flex nav__item'>
           <Link href='/'>
             <div className='px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5'>
               Get Started
