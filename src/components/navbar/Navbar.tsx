@@ -1,4 +1,4 @@
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
+import { Disclosure, DisclosureButton, DisclosurePanel, Transition } from '@headlessui/react'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -17,8 +17,7 @@ const Navbar = () => {
 
   return (
     <div className='w-full'>
-      <nav className='container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0'>
-        {/* logo */}
+      <nav className='container relative flex flex-wrap items-center justify-between p-4 lg:p-8 mx-auto lg:justify-between xl:px-0'>
         <Disclosure>
           {({ open }) => (
             <>
@@ -33,7 +32,7 @@ const Navbar = () => {
                     />
                   </div>
                 </Link>
-                <div className='flex justify-center items-center gap-4'>
+                <div className='flex lg:hidden justify-center items-center gap-4'>
                   <div className='flex justify-center items-center'>
                     <ThemeSwitch />
                   </div>
@@ -60,26 +59,35 @@ const Navbar = () => {
                       )}
                     </svg>
                   </DisclosureButton>
-                  </div>
-                <DisclosurePanel
-                  as='div'
-                  className='flex flex-col lg:flex-row flex-wrap w-full my-5 lg:hidden'
+                </div>
+                <Transition
+                  enter='transition duration-300 ease-out'
+                  enterFrom='transform -translate-y-full opacity-50'
+                  enterTo='transform translate-y-0 opacity-100'
+                  leave='transition duration-300 ease-in'
+                  leaveFrom='transform translate-y-0 opacity-100'
+                  leaveTo='transform -translate-y-full opacity-0'
                 >
-                  <>
-                    {navigation.map((item, index) => (
-                      <Link key={index} href='/'>
-                        <div className='w-full flex justify-center items-center px-0 lg:px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700'>
-                          {item}
+                  <DisclosurePanel
+                    as='div'
+                    className='flex flex-col lg:flex-row flex-wrap w-full my-5 lg:hidden transform transition-all ease-in-out'
+                  >
+                    <>
+                      {navigation.map((item, index) => (
+                        <Link key={index} href='/'>
+                          <div className='w-full flex justify-center items-center px-0 lg:px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700'>
+                            {item}
+                          </div>
+                        </Link>
+                      ))}
+                      <Link href='/' className='flex justify-center items-center'>
+                        <div className='w-full max-w-sm px-6 py-2 mt-3 text-center text-white bg-indigo-600 rounded-md lg:ml-5'>
+                          Get Started
                         </div>
                       </Link>
-                    ))}
-                    <Link href='/' className='flex justify-center items-center'>
-                      <div className='w-full max-w-sm px-6 py-2 mt-3 text-center text-white bg-indigo-600 rounded-md lg:ml-5'>
-                        Get Started
-                      </div>
-                    </Link>
-                  </>
-                </DisclosurePanel>
+                    </>
+                  </DisclosurePanel>
+                </Transition>
               </div>
             </>
           )}
