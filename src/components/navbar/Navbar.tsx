@@ -4,10 +4,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useMemo } from 'react'
 import ThemeSwitch from '~/components/navbar/ThemeSwitch'
+import { navigation } from '~/constants'
 
 const Navbar = () => {
-  const navigation = ['Product', 'Features', 'Pricing', 'Company', 'Blog']
-
   const { theme } = useTheme()
 
   const logoUrl = useMemo(

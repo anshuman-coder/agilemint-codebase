@@ -1,11 +1,15 @@
-import { Disclosure } from '@headlessui/react'
-import React from 'react'
+import React, { FC, PropsWithChildren } from 'react'
 import Navbar from '~/components/navbar/Navbar'
+import { Footer } from '~/components/global'
 
-const PageBox = () => {
+const PageBox: FC<PropsWithChildren> = ({
+  children
+}) => {
   return (
     <>
       <Navbar />
+      {children}
+      <Footer />
     </>
   )
 }

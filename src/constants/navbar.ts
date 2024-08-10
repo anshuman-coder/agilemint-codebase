@@ -1,0 +1,1 @@
+export const navigation = ['Product', 'Features', 'Pricing', 'Company', 'Blog']

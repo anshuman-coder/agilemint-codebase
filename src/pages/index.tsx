@@ -8,7 +8,8 @@ export default function Home() {
   return (
     <>
       <PageHelmet />
-      <PageBox />
+      <PageBox>
+      </PageBox>
     </>
   )
 }
