@@ -1,9 +1,12 @@
+import { Disclosure } from '@headlessui/react'
 import React from 'react'
+import Navbar from '~/components/navbar/Navbar'
 
 const PageBox = () => {
   return (
-    <div className='w-full'>
-    </div>
+    <>
+      <Navbar />
+    </>
   )
 }
 

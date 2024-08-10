@@ -1,14 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 
 const ThemeSwitch = () => {
+  const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
+
+  useEffect(() => setMounted(true), [])
+
+  if (!mounted) return null
 
   return (
     <div className='flex items-center'>
-      {theme === 'dark' ? (
+      {theme === 'light' ? (
         <button
-          onClick={() => setTheme('light')}
+          onClick={() => setTheme('dark')}
           className='text-gray-300 rounded-full outline-none focus:outline-none'>
           <span className='sr-only'>Light Mode</span>
 
@@ -22,7 +27,7 @@ const ThemeSwitch = () => {
         </button>
       ) : (
         <button
-          onClick={() => setTheme('dark')}
+          onClick={() => setTheme('light')}
           className='text-gray-500 rounded-full outline-none focus:outline-none focus-visible:ring focus-visible:ring-gray-100 focus:ring-opacity-20'>
           <span className='sr-only'>Dark Mode</span>
           <svg
