@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { Hero, Testimonials } from '~/components/home'
+import { Hero, Testimonials, Faq } from '~/components/home'
 import { Benefits, PageBox, PageHelmet, SectionWrapper } from '~/components/global'
 import * as Types from '~/types'
 import { Smile, Smartphone, ChartNoAxesCombined, MousePointerClick, SlidersHorizontal, Sun } from 'lucide-react'
@@ -35,6 +35,15 @@ export default function Home() {
           </p>
         </SectionWrapper>
         <Testimonials />
+        {/* This section may be needed in the future */}
+
+        <SectionWrapper preTitle='FAQ' title='Frequently Asked Questions' align='center'>
+          <p className='max-w-2xl py-4 text-lg leading-normal text-gray-500 lg:text-xl xl:text-xl dark:text-gray-300'>
+            Answer your customers possible questions here, it will increase the
+            conversion rate as well as support or chat requests.
+          </p>
+        </SectionWrapper>
+        <Faq />
       </PageBox>
     </>
   )
