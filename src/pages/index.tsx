@@ -35,7 +35,7 @@ export default function Home() {
           </p>
         </SectionWrapper>
         <Testimonials />
-        {/* This section may be needed in the future */}
+        {/* This section may be needed in the future
 
         <SectionWrapper preTitle='FAQ' title='Frequently Asked Questions' align='center'>
           <p className='max-w-2xl py-4 text-lg leading-normal text-gray-500 lg:text-xl xl:text-xl dark:text-gray-300'>
@@ -43,7 +43,7 @@ export default function Home() {
             conversion rate as well as support or chat requests.
           </p>
         </SectionWrapper>
-        <Faq />
+        <Faq /> */}
       </PageBox>
     </>
   )
