@@ -1,12 +1,9 @@
 import Image from 'next/image'
 import React from 'react'
+import { Hero, Testimonials } from '~/components/home'
 import { Benefits, PageBox, PageHelmet, SectionWrapper } from '~/components/global'
-import Hero from '~/components/home/Hero'
 import * as Types from '~/types'
-import { Smile, Smartphone, ChartNoAxesCombined, MousePointerClick, SlidersHorizontal, Sun, Section } from 'lucide-react'
-
-
-
+import { Smile, Smartphone, ChartNoAxesCombined, MousePointerClick, SlidersHorizontal, Sun } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -37,6 +34,7 @@ export default function Home() {
             Use this section to highlight your popular customers.
           </p>
         </SectionWrapper>
+        <Testimonials />
       </PageBox>
     </>
   )
