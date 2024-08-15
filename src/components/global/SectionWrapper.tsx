@@ -6,6 +6,7 @@ interface SectionWrapper extends PropsWithChildren {
   title?: string
   preTitle?: string
   align?: 'left' | 'center' | 'right'
+  className?: string
 }
 
 const SectionWrapper: FC<SectionWrapper> = ({
@@ -13,6 +14,7 @@ const SectionWrapper: FC<SectionWrapper> = ({
   preTitle = '',
   align = 'left',
   children,
+  className = '',
 }) => {
   return (
     <Container
@@ -23,6 +25,7 @@ const SectionWrapper: FC<SectionWrapper> = ({
           align === 'center' && 'text-center',
           align === 'left' && 'text-left',
           align === 'right' && 'text-right',
+          className,
         )
       }
     >

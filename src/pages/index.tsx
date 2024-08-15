@@ -3,7 +3,7 @@ import React from 'react'
 import { Hero, Testimonials, Faq } from '~/components/home'
 import { Benefits, PageBox, PageHelmet, SectionWrapper } from '~/components/global'
 import * as Types from '~/types'
-import { Smile, Smartphone, ChartNoAxesCombined, MousePointerClick, SlidersHorizontal, Sun } from 'lucide-react'
+import { Wrench, Smartphone, Sprout, Rocket, SlidersHorizontal, Sun, Handshake } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -12,16 +12,10 @@ export default function Home() {
       <PageBox>
         <Hero />
         <SectionWrapper
-          preTitle='Nextly Benefits'
-          title='Why should you use this landing page'
+          title='Why Choose Us'
           align='center'
-        >
-          <p className='max-w-2xl py-4 text-lg leading-normal text-gray-500 lg:text-xl xl:text-xl dark:text-gray-300'>
-            Nextly is a free landing page & marketing website template for startups
-            and indie projects. Its built with Next.js & TailwindCSS. And its
-            completely open-source.
-          </p>
-        </SectionWrapper>
+          className='mb-6 lg:mb-12'
+        />
         <Benefits data={BenefitsOne} />
         <Benefits imgPos='right' data={BenefitsTwo} />
         <SectionWrapper
@@ -50,24 +44,29 @@ export default function Home() {
 }
 
 const BenefitsOne: Types.Benefits = {
-  title: 'Highlight your benefits',
-  desc: 'You can use this space to highlight your first benefit or a feature of your product. It can also contain an image or Illustration like in the example along with some bullet points.',
+  title: 'Drive Success with Digital Innovation',
+  desc: 'We deliver top-tier web development, captivating design, and strategic digital marketing to enhance your online presence. Our startup consulting and fundraising expertise help you launch and scale with confidence.',
   image: <Image src='/assets/benefit-one.png' alt='benefit-one' width='521' height='482' layout='intrinsic' />,
   bullets: [
     {
-      title: 'Understand your customers',
-      desc: 'Then explain the first point breifly in one or two lines.',
-      icon: <Smile />,
+      title: 'Cutting-Edge Development',
+      desc: 'Expert web and app development using the latest technologies for superior performance.',
+      icon: <Wrench />,
     },
     {
-      title: 'Powered by Next.js & TailwindCSS',
-      desc: 'This template is powered by latest technologies and tools.',
-      icon: <ChartNoAxesCombined />,
+      title: 'Innovative Design & Branding',
+      desc: 'Captivating UI/UX and digital branding that enhances user experience and brand identity.',
+      icon: <Sprout />,
     },
     {
-      title: 'Dark & Light Mode',
-      desc: 'Nextly comes with a zero-config light & dark mode. ',
-      icon: <MousePointerClick />,
+      title: 'Digital Marketing',
+      desc: 'Strategic digital marketing services to boost your online presence and drive growth, including SEO, SMM, and SEM.',
+      icon: <Rocket />,
+    },
+    {
+      title: 'Fundraising and Startup Consulting',
+      desc: 'Comprehensive fundraising and startup services, such as financial modeling, pitch decks, teasers, and investor relations, will help you successfully launch and scale your business.',
+      icon: <Handshake />,
     },
   ],
 }

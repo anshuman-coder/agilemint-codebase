@@ -10,7 +10,7 @@ const Container: FC<ContainerProps> = ({
   className = '',
 }) => {
   return (
-    <div className={clsx('container p-0 mx-auto xl:px-6', className)}>
+    <div className={clsx('max-w-screen-2xl px-6 md:px-8 mx-auto xl:px-10', className)}>
       {children}
     </div>
   )

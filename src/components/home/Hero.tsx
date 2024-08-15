@@ -58,7 +58,7 @@ const Hero = () => {
         </div>
       </Container>
       <Container>
-        <div className='flex flex-col justify-center'>
+        <div className='flex flex-col justify-center my-9 md:my-10 lg:my-16'>
           <div className='text-xl text-center text-gray-700 dark:text-white'>
             Trusted by <span className='text-indigo-600'>2000+</span> customers
             worldwide

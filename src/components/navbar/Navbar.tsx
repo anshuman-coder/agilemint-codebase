@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <div className='w-full z-40 fixed top-0 left-0 bg-white dark:bg-trueGray-900'>
-      <nav className='container relative flex flex-wrap items-center justify-between py-2 px-4 lg:py-4 lg:px-8 mx-auto lg:justify-between xl:px-6 laptop:px-0'>
+      <nav className='relative max-w-screen-2xl flex flex-wrap items-center justify-between py-2 px-4 lg:py-4 lg:px-8 mx-auto lg:justify-between xl:px-6 laptop:px-0'>
         <Disclosure>
           {({ open }) => (
             <>
