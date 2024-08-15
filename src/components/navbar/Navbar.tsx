@@ -1,10 +1,13 @@
-import { Disclosure, DisclosureButton, DisclosurePanel, Transition } from '@headlessui/react'
+import { Disclosure, DisclosureButton, DisclosurePanel, Popover, PopoverButton, PopoverPanel, Transition } from '@headlessui/react'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { Fragment, useMemo } from 'react'
+import React, { FC, Fragment, useMemo, useState } from 'react'
 import ThemeSwitch from '~/components/navbar/ThemeSwitch'
-import { navigation } from '~/constants'
+import { headerNavigation } from '~/constants'
+import { NavItemType } from '~/types'
+import { ChevronDown, ChevronUp } from 'lucide-react'
+import clsx from 'clsx'
 
 const Navbar = () => {
   const { theme } = useTheme()
@@ -15,7 +18,7 @@ const Navbar = () => {
   )
 
   return (
-    <div className='w-full z-50 fixed top-0 left-0 bg-white dark:bg-trueGray-900'>
+    <div className='w-full z-40 fixed top-0 left-0 bg-white dark:bg-trueGray-900'>
       <nav className='container relative flex flex-wrap items-center justify-between py-2 px-4 lg:py-4 lg:px-8 mx-auto lg:justify-between xl:px-6 laptop:px-0'>
         <Disclosure>
           {({ open }) => (
@@ -73,18 +76,14 @@ const Navbar = () => {
                     className='flex flex-col z-10 lg:flex-row flex-wrap w-full my-5 lg:hidden transform transition-all ease-in-out'
                   >
                     <>
-                      {navigation.map((item, index) => (
-                        <Link key={index} href='/'>
-                          <div className='w-full flex justify-center items-center px-0 lg:px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700'>
-                            {item}
-                          </div>
-                        </Link>
+                      {headerNavigation.map((item) => (
+                        <MobileNavItem key={item.id} item={item} />
                       ))}
-                      <Link href='/' className='flex justify-center items-center'>
+                      <div className='flex justify-center items-center'>
                         <div className='w-full max-w-sm px-6 py-2 mt-3 text-center text-white bg-indigo-600 rounded-md lg:ml-5'>
-                          Get Started
+                          Contact Us
                         </div>
-                      </Link>
+                      </div>
                     </>
                   </DisclosurePanel>
                 </Transition>
@@ -95,14 +94,8 @@ const Navbar = () => {
 
         <div className='hidden text-center lg:flex lg:items-center'>
           <ul className='items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex'>
-            {navigation.map((menu, index) => (
-              <li className='mr-3 nav__item' key={index}>
-                <Link href='/' className=''>
-                  <div className=' text-center inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none'>
-                    {menu}
-                  </div>
-                </Link>
-              </li>
+            {headerNavigation.map((menu) => (
+              <NavItem key={menu.id} item={menu} />
             ))}
           </ul>
         </div>
@@ -110,7 +103,7 @@ const Navbar = () => {
         <div className='hidden mr-3 gap-x-6 lg:flex nav__item'>
           <Link href='/'>
             <div className='px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5'>
-              Get Started
+              Contact Us
             </div>
           </Link>
 
@@ -118,6 +111,87 @@ const Navbar = () => {
         </div>
       </nav>
     </div>
+  )
+}
+
+interface NavItemProps {
+  item: NavItemType,
+  anchor?: 'bottom start' | 'right start'
+}
+
+const NavItem: FC<NavItemProps> = ({
+  item: {
+    id,
+    label,
+    route,
+    menuItems = [],
+  },
+  anchor = 'bottom start',
+}) => {
+
+  return (
+    menuItems.length > 0 ? (
+      <Popover className='relative'>
+        {({ open }) => (
+          <>
+            <PopoverButton as='div' className='border-none cursor-pointer'>
+              <li className='mr-3 nav__item'>
+                <div className=' text-center inline-flex flex-row justify-start items-center gap-x-1 px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none'>
+                  <span>{label}</span>
+                  <span>{open ? <ChevronUp className='w-4 h-4' /> : <ChevronDown className='w-4 h-4' />}</span>
+                </div>
+              </li>
+            </PopoverButton>
+            <PopoverPanel as='ul' anchor={anchor} className='flex flex-col justify-start items-start gap-y-4 mt-2 py-4 px-8 z-50 bg-gray-200 dark:bg-gray-800 rounded-md border border-solid border-gray-200 dark:border-gray-800'>
+              {menuItems.map(item => <NavItem key={item.id} item={item} />)}
+            </PopoverPanel>
+          </>
+        )}
+      </Popover>
+    ) : (
+      <li className='mr-3 nav__item'>
+        <Link href={route}>
+          <div className='text-center inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none'>
+            {label}
+          </div>
+        </Link>
+      </li>
+    )
+  )
+}
+
+const MobileNavItem: FC<NavItemProps> = ({
+  item: {
+    id,
+    label,
+    route,
+    menuItems = [],
+  },
+}) => {
+  return (
+    menuItems.length > 0 ? (
+      <Disclosure as='div'>
+        {({ open }) => (
+          <div className='w-full flex flex-col items-center p-0 m-0'>
+            <DisclosureButton as='div' className='w-full'>
+              <div className='w-full flex justify-center gap-x-1 items-center px-0 lg:px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700'>
+                <span>{label}</span>
+                <span>{open ? <ChevronUp className='w-4 h-4' /> : <ChevronDown className='w-4 h-4' />}</span>
+              </div>
+            </DisclosureButton>
+            <DisclosurePanel as='div' className='max-w-sm flex flex-col bg-gray-200 dark:bg-gray-800 rounded-md py-4 px-8'>
+              {menuItems.map(_item => <MobileNavItem key={id} item={_item} />)}
+            </DisclosurePanel>
+          </div>
+        )}
+      </Disclosure>
+    ) : (
+      <Link key={id} href={route}>
+        <div className='w-full flex justify-center items-center px-0 lg:px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700'>
+          {label}
+        </div>
+      </Link>
+    )
   )
 }
 

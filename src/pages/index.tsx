@@ -8,7 +8,7 @@ import { Smile, Smartphone, ChartNoAxesCombined, MousePointerClick, SlidersHoriz
 export default function Home() {
   return (
     <>
-      <PageHelmet />
+      <PageHelmet title='Home' />
       <PageBox>
         <Hero />
         <SectionWrapper

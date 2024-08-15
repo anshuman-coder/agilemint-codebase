@@ -12,3 +12,10 @@ export type BenefitsBullets = {
   desc: string
   icon: ReactElement
 }
+
+export type NavItemType = {
+  id: string
+  label: string
+  route: string
+  menuItems?: NavItemType[]
+}

@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useMemo } from 'react'
 import { Container } from '~/components/global'
-import { navigation } from '~/constants'
+import { footerNavigation } from '~/constants'
 
 const Footer = () => {
   const { theme } = useTheme()
@@ -42,7 +42,7 @@ const Footer = () => {
 
           <div>
             <div className='flex flex-row lg:flex-col flex-wrap w-full -ml-3 lg:ml-0'>
-              {navigation.map((item, index) => (
+              {footerNavigation.map((item, index) => (
                 <Link key={index} href='/'>
                   <div className='w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700'>
                     {item}
