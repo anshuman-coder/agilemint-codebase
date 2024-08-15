@@ -1,5 +1,5 @@
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -113,18 +113,15 @@ const NavItem: FC<NavItemType> = ({
               <div>
                 <div className='w-full flex justify-start items-center px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700'>
                   <span>{label}</span>
-                  <span>{open ? <ChevronLeft className='w-4 h-4' /> : <ChevronRight className='w-4 h-4' />}</span>
+                  <span className='hidden lg:block'>{open ? <ChevronLeft className='w-4 h-4' /> : <ChevronRight className='w-4 h-4' />}</span>
+                  <span className='block lg:hidden'>{open ? <ChevronUp className='w-4 h-4' /> : <ChevronDown className='w-4 h-4' />}</span>
                 </div>
               </div>
             </PopoverButton>
-            <PopoverPanel transition as='ul' className='absolute top-0 -right-44 flex flex-col justify-start items-start gap-y-4 py-2 px-4 z-50 bg-gray-200 dark:bg-gray-800 rounded-md border border-solid border-gray-200 dark:border-gray-800  transition duration-200 ease-in-out data-[closed]:scale-95 data-[closed]:opacity-0'>
+            <PopoverPanel transition as='ul' className='absolute lg:top-0 lg:-right-44 flex flex-col justify-start items-start gap-y-4 py-2 px-1 lg:px-4 z-50 text-nowrap bg-gray-200 dark:bg-gray-800 rounded-md border border-solid border-gray-200 dark:border-gray-800  transition duration-200 ease-in-out data-[closed]:scale-95 data-[closed]:opacity-0'>
               {
                 menuItems.map(item => (
-                  <Link key={item.id} href={item.route}>
-                    <div className='w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700'>
-                      {item.label}
-                    </div>
-                  </Link>
+                  <NavItem key={item.id} {...item} />
                 ))
               }
             </PopoverPanel>
