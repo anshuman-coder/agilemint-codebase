@@ -2,12 +2,11 @@ import { Disclosure, DisclosureButton, DisclosurePanel, Popover, PopoverButton, 
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { FC, Fragment, useMemo, useState } from 'react'
+import React, { FC, Fragment, useMemo } from 'react'
 import ThemeSwitch from '~/components/navbar/ThemeSwitch'
-import { headerNavigation } from '~/constants'
+import { navigation } from '~/constants'
 import { NavItemType } from '~/types'
 import { ChevronDown, ChevronUp } from 'lucide-react'
-import clsx from 'clsx'
 
 const Navbar = () => {
   const { theme } = useTheme()
@@ -76,7 +75,7 @@ const Navbar = () => {
                     className='flex flex-col z-10 lg:flex-row flex-wrap w-full my-5 lg:hidden transform transition-all ease-in-out'
                   >
                     <>
-                      {headerNavigation.map((item) => (
+                      {navigation.map((item) => (
                         <MobileNavItem key={item.id} item={item} />
                       ))}
                       <div className='flex justify-center items-center'>
@@ -94,7 +93,7 @@ const Navbar = () => {
 
         <div className='hidden text-center lg:flex lg:items-center'>
           <ul className='items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex'>
-            {headerNavigation.map((menu) => (
+            {navigation.map((menu) => (
               <NavItem key={menu.id} item={menu} />
             ))}
           </ul>
@@ -142,7 +141,7 @@ const NavItem: FC<NavItemProps> = ({
                 </div>
               </li>
             </PopoverButton>
-            <PopoverPanel as='ul' anchor={anchor} className='flex flex-col justify-start items-start gap-y-4 mt-2 py-4 px-8 z-50 bg-gray-200 dark:bg-gray-800 rounded-md border border-solid border-gray-200 dark:border-gray-800'>
+            <PopoverPanel transition as='ul' anchor={anchor} className='flex flex-col justify-start items-start gap-y-4 mt-2 py-4 px-8 z-50 bg-gray-200 dark:bg-gray-800 rounded-md border border-solid border-gray-200 dark:border-gray-800 transition duration-200 ease-in-out data-[closed]:scale-95 data-[closed]:opacity-0'>
               {menuItems.map(item => <NavItem key={item.id} item={item} />)}
             </PopoverPanel>
           </>

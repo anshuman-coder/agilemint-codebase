@@ -1,9 +1,12 @@
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useMemo } from 'react'
+import React, { FC, useMemo } from 'react'
 import { Container } from '~/components/global'
-import { footerNavigation } from '~/constants'
+import { navigation } from '~/constants'
+import { NavItemType } from '~/types'
 
 const Footer = () => {
   const { theme } = useTheme()
@@ -42,12 +45,8 @@ const Footer = () => {
 
           <div>
             <div className='flex flex-row lg:flex-col flex-wrap w-full -ml-3 lg:ml-0'>
-              {footerNavigation.map((item, index) => (
-                <Link key={index} href='/'>
-                  <div className='w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700'>
-                    {item}
-                  </div>
-                </Link>
+              {navigation.map((item, index) => (
+                <NavItem key={item.id} {...item} />
               ))}
             </div>
           </div>
@@ -96,6 +95,49 @@ const Footer = () => {
         </div>
       </Container>
     </div>
+  )
+}
+
+const NavItem: FC<NavItemType> = ({
+  id,
+  label,
+  route,
+  menuItems = [],
+}) => {
+  return (
+    menuItems.length > 0 ? (
+      <Popover className='relative'>
+        {({ open }) => (
+          <>
+            <PopoverButton as='div'>
+              <div>
+                <div className='w-full flex justify-start items-center px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700'>
+                  <span>{label}</span>
+                  <span>{open ? <ChevronLeft className='w-4 h-4' /> : <ChevronRight className='w-4 h-4' />}</span>
+                </div>
+              </div>
+            </PopoverButton>
+            <PopoverPanel transition as='ul' className='absolute top-0 -right-44 flex flex-col justify-start items-start gap-y-4 py-2 px-4 z-50 bg-gray-200 dark:bg-gray-800 rounded-md border border-solid border-gray-200 dark:border-gray-800  transition duration-200 ease-in-out data-[closed]:scale-95 data-[closed]:opacity-0'>
+              {
+                menuItems.map(item => (
+                  <Link key={item.id} href={item.route}>
+                    <div className='w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700'>
+                      {item.label}
+                    </div>
+                  </Link>
+                ))
+              }
+            </PopoverPanel>
+          </>
+        )}
+      </Popover>
+    ) : (
+      <Link key={id} href={route}>
+        <div className='w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700'>
+          {label}
+        </div>
+      </Link>
+    )
   )
 }
 

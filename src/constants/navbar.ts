@@ -1,8 +1,8 @@
 import { NavItemType } from '~/types'
 
-export const footerNavigation = ['Home', 'Services', 'Products', 'Team']
+// export const footerNavigation = ['Home', 'Services', 'Products', 'Team']
 
-export const headerNavigation: NavItemType[] = [
+export const navigation: NavItemType[] = [
   {
     id: 'home',
     label: 'Home',
