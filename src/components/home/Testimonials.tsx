@@ -9,27 +9,25 @@ const Testimonials = () => {
         <div className='lg:col-span-2 xl:col-auto'>
           <div className='flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800'>
             <p className='text-2xl leading-normal '>
-              Share a real <Mark>testimonial</Mark>
-              that hits some of your benefits from one of your popular customer.
+              AgileMint really knows their stuff. They helped us <Mark>build a website</Mark> that looks great and brings in more customers.
             </p>
 
             <Avatar
               image='/assets/user1.jpg'
-              name='Sarah Steiner'
-              title='VP Sales at Google'
+              name='Maria Rodriguez'
+              title='VP Sales at Zigglers'
             />
           </div>
         </div>
         <div className=''>
           <div className='flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800'>
             <p className='text-2xl leading-normal '>
-              Make sure you only pick the <Mark>right sentence</Mark>
-              to keep it short and simple.
+              Working with them was a breeze. They listened to our <Mark>ideas and brought them to life</Mark>. Our new software is amazing!
             </p>
 
             <Avatar
               image='/assets/user2.jpg'
-              name='Dylan Ambrose'
+              name='David Johnson'
               title='Lead marketer at Netflix'
             />
           </div>
@@ -37,13 +35,12 @@ const Testimonials = () => {
         <div className=''>
           <div className='flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800'>
             <p className='text-2xl leading-normal '>
-              This is an <Mark>awesome</Mark> landing page template I{`'`}ve seen. I
-              would use this for anything.
+              AgileMint helped us <Mark>boost our online sales.</Mark> Our website is now easier to find, and {`we're`} getting more orders.
             </p>
 
             <Avatar
               image='/assets/user3.jpg'
-              name='Gabrielle Winn'
+              name='Aiko Tanaka'
               title='Co-founder of Acme Inc'
             />
           </div>

@@ -19,25 +19,22 @@ export default function Home() {
         <Benefits data={BenefitsOne} />
         <Benefits imgPos='right' data={BenefitsTwo} />
         <SectionWrapper
-          preTitle='Testimonials'
-          title={`Here's what our customers said`}
+          title={`What our clients Say about us!`}
           align='center'
         >
           <p className='max-w-2xl py-4 text-lg leading-normal text-gray-500 lg:text-xl xl:text-xl dark:text-gray-300'>
-            Testimonails is a great way to increase the brand trust and awareness.
-            Use this section to highlight your popular customers.
+            Discover how our innovative solutions have transformed businesses. Read our clients success stories
           </p>
         </SectionWrapper>
         <Testimonials />
-        {/* This section may be needed in the future
 
-        <SectionWrapper preTitle='FAQ' title='Frequently Asked Questions' align='center'>
+        <SectionWrapper preTitle='FAQ' title='Frequently Asked Questions' align='center' className='pt-10 md:pt-16 lg:pt-20'>
           <p className='max-w-2xl py-4 text-lg leading-normal text-gray-500 lg:text-xl xl:text-xl dark:text-gray-300'>
             Answer your customers possible questions here, it will increase the
             conversion rate as well as support or chat requests.
           </p>
         </SectionWrapper>
-        <Faq /> */}
+        <Faq />
       </PageBox>
     </>
   )
@@ -72,23 +69,23 @@ const BenefitsOne: Types.Benefits = {
 }
 
 const BenefitsTwo: Types.Benefits = {
-  title: 'Offer more benefits here',
-  desc: 'You can use this same layout with a flip image to highlight your rest of the benefits of your product. It can also contain an image or Illustration as above section along with some bullet points.',
+  title: 'Additional perks for why to choose us',
+  desc: 'Harness the power of innovation and expertise to drive your business forward with our customized IT solutions.',
   image: <Image src='/assets/benefit-two.png' alt='benefit-two' width='521' height='482' layout='intrinsic'  />,
   bullets: [
     {
-      title: 'Mobile Responsive Template',
-      desc: 'Nextly is designed as a mobile first responsive template.',
+      title: 'Branding',
+      desc: 'We craft memorable branding that elevates your identity, leaving a lasting impact on your audience.',
       icon: <Smartphone />,
     },
     {
-      title: 'Powered by Next.js & TailwindCSS',
-      desc: 'This template is powered by latest technologies and tools.',
+      title: 'Digital MARKETING',
+      desc: 'We boost your brand with strategic digital marketing, driving online growth and engagement.',
       icon: <SlidersHorizontal />,
     },
     {
-      title: 'Dark & Light Mode',
-      desc: 'Nextly comes with a zero-config light & dark mode. ',
+      title: 'Financial Modeling and startup fundraising',
+      desc: 'We drive growth through expert financial modeling and startup fundraising, helping you scale efficiently.',
       icon: <Sun />,
     },
   ],

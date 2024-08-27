@@ -37,22 +37,24 @@ const Faq = () => {
 
 const faqdata = [
   {
-    question: 'Is this template completely free to use?',
-    answer: 'Yes, this template is completely free to use.',
+    question: 'What services do you offer?',
+    answer: 'We provide a full range of IT services, including software development, IT consulting, network management, cybersecurity, cloud solutions, and tech support.',
   },
   {
-    question: 'Can I use it in a commercial project?',
-    answer: 'Yes, this you can.',
+    question: 'How do you ensure your services are top-notch?',
+    answer: 'Our team follows best practices, uses the latest technology, and undergoes continuous training to deliver high-quality results.',
   },
   {
-    question: 'What is your refund policy? ',
-    answer:
-      "If you're unhappy with your purchase for any reason, email us within 90 days and we'll refund you in full, no questions asked.",
+    question: 'What industries do you work with?',
+    answer: 'We have experience across various industries, including finance, healthcare, retail, education, and tech.',
   },
   {
-    question: 'Do you offer technical support? ',
-    answer:
-      "No, we don't offer technical support for free downloads. Please purchase a support plan to get 6 months of support.",
+    question: 'How do you ensure data security?',
+    answer: 'We take your data security seriously, implementing strong measures and following industry standards to protect your information.',
+  },
+  {
+    question: 'How can I get in touch with you?',
+    answer: 'Schedule a meet with our team on Calendly or reach out to us at [email protected] for further assistance.',
   },
 ]
 
