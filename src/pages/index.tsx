@@ -79,7 +79,7 @@ const BenefitsTwo: Types.Benefits = {
       icon: <Smartphone />,
     },
     {
-      title: 'Digital MARKETING',
+      title: 'Digital Marketing',
       desc: 'We boost your brand with strategic digital marketing, driving online growth and engagement.',
       icon: <SlidersHorizontal />,
     },
