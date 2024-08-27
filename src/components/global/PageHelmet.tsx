@@ -13,8 +13,10 @@ const PageHelmet: FC<PageHelmetProps> = ({
       <title>AgileMint {title ? `| ${title}` : ''}</title>
       <meta
         name='description'
-        content='Nextly is a free landing page template built with next.js & Tailwind CSS'
+        content='Your Tech Partner Specializing in Innovative Tech Products and Custom Software Solutions for Startups.'
       />
+      <meta name='keywords' content='IT solutions, web development, app development, digital marketing, branding, startup fundraising, financial modeling'/>
+      <meta name='author' content='AgileMint' />
       <link rel='icon' href='/favicon.ico' />
     </Head>
   )
