@@ -8,7 +8,7 @@ import { Wrench, Smartphone, Sprout, Rocket, SlidersHorizontal, Sun, Handshake }
 export default function Home() {
   return (
     <>
-      <PageHelmet title='Home' />
+      <PageHelmet title='| Home' />
       <PageBox>
         <Hero />
         <SectionWrapper

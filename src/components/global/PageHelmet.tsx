@@ -10,7 +10,7 @@ const PageHelmet: FC<PageHelmetProps> = ({
 }) => {
   return (
     <Head>
-      <title>AgileMint {title ? `| ${title}` : ''}</title>
+      <title>AgileMint {title}</title>
       <meta
         name='description'
         content='Your Tech Partner Specializing in Innovative Tech Products and Custom Software Solutions for Startups.'
