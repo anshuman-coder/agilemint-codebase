@@ -37,9 +37,7 @@ const Footer = () => {
             </div>
 
             <div className='max-w-md mt-4 text-gray-500 dark:text-gray-400'>
-              Nextly is a free landing page & marketing website template for
-              startups and indie projects. Its built with Next.js & TailwindCSS.
-              And its completely open-source.
+              Delivering excellence through innovation and expertise. Partner with us for tailored IT solutions that drive success.
             </div>
           </div>
 
