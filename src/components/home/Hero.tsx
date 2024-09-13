@@ -65,16 +65,16 @@ const Hero = () => {
           </div>
           <div className='flex flex-wrap justify-center items-center gap-5 mt-10 md:justify-around'>
             <div className='pt-2 text-gray-400 dark:text-gray-400'>
-              <Image src='/assets/Client Logo-15.png' width={250} height={80} alt='client_compony_logo' className='h-20 w-64 object-contain' />
+              <Image src='/assets/aero_consultant.png' width={250} height={80} alt='AeroConsultant' className='h-20 w-64 object-contain' />
             </div>
             <div className='text-gray-400 dark:text-gray-400'>
-              <Image src='/assets/Client Logo-16.png' width={250} height={80} alt='client_compony_logo' className='h-20 w-64 object-contain' />
+              <Image src='/assets/quiksync.png' width={250} height={80} alt='Quiksync' className='h-20 w-64 object-contain' />
             </div>
             <div className='text-gray-400 dark:text-gray-400'>
-              <Image src='/assets/Client Logo-17.png' width={250} height={80} alt='client_compony_logo' className='h-20 w-64 object-contain' />
+              <Image src='/assets/edi_by_design.png' width={250} height={80} alt='EdiByDesign' className='h-20 w-64 object-contain' />
             </div>
             <div className='pt-1 text-gray-400 dark:text-gray-400'>
-              <Image src='/assets/Client Logo-18.png' width={250} height={80} alt='client_compony_logo' className='h-20 w-64 object-contain' />
+              <Image src='/assets/zigglers.png' width={250} height={80} alt='Zigglers' className='h-20 w-64 object-contain' />
             </div>
           </div>
 
