@@ -61,7 +61,7 @@ const Hero = () => {
         <div className='flex flex-col justify-center my-9 md:my-10 lg:my-16'>
           <div className='text-xl text-center text-gray-700 dark:text-white'>
             Our <span className='text-indigo-600'>Trusted </span>
-            Parteners
+            Partners
           </div>
           <div className='flex flex-wrap justify-center items-center gap-5 mt-10 md:justify-around'>
             <div className='pt-2 text-gray-400 dark:text-gray-400'>
