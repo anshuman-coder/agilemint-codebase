@@ -3,11 +3,11 @@ import { NavItemType } from '~/types'
 // export const footerNavigation = ['Home', 'Services', 'Products', 'Team']
 
 export const navigation: NavItemType[] = [
-  // {
-  //   id: 'home',
-  //   label: 'Home',
-  //   route: '/',
-  // },
+  {
+    id: 'home',
+    label: 'Home',
+    route: '/',
+  },
   // {
   //   id: 'services',
   //   label: 'Services',
@@ -40,9 +40,9 @@ export const navigation: NavItemType[] = [
   //   label: 'Products',
   //   route: '/product',
   // },
-  // {
-  //   id: 'team',
-  //   label: 'Team',
-  //   route: '/team',
-  // },
+  {
+    id: 'team',
+    label: 'Team',
+    route: '/team',
+  },
 ]
