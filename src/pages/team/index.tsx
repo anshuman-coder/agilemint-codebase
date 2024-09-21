@@ -1,5 +1,6 @@
-import { NextPage } from 'next'
+
 import { PageBox, PageHelmet, SectionWrapper } from '~/components/global'
+import { MembersList } from '~/components/team'
 
 export default function Team() {
   return (
@@ -11,6 +12,7 @@ export default function Team() {
           align='center'
           className='mb-6 lg:mb-12'
         />
+        <MembersList />
       </PageBox>
     </>
   )
